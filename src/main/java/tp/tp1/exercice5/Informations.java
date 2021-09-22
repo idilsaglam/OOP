@@ -11,9 +11,7 @@ public class Informations {
         this.force = f;
         this.agilite = a;
     }
-    public  Informations(Informations inf){
 
-    }
 
     public int getVitalite(){
         return this.vivalite;
@@ -24,8 +22,8 @@ public class Informations {
     public int getAgilite(){
         return this.agilite;
     }
+    public void setVivalite(int v){this.vivalite = v;}
+    public void setAgilite(int a){this.agilite = a;}
 
-    public String toString(){
 
-    }
 }
