@@ -3,6 +3,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Exercice4 {
+
+    public static int tentative(int expected, Scanner sc){
+        return 1 +
+                (
+                        sc.nextInt() == expected ?
+                                0 :
+                                tentative(expected,sc)
+                );
+    }
+
     /**
      * Exercice 4.1
      * Une fonction qui choisit deux nombres aléatoires entre 1 et 9 et demande à l’utilisateur le résultat de leur
@@ -11,24 +21,13 @@ public class Exercice4 {
      */
     public static int question(){
 
-        int tentative = 0;
-
         Random rd = new Random();
-        int nb1 = rd.nextInt(10);
-        int nb2 = rd.nextInt(10);
+        int nb1 = rd.nextInt(9)+1;
+        int nb2 = rd.nextInt(9)+1;
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println(nb1 +" * "+nb2+" ?");
-        int r = sc.nextInt();
-
-        if(r != nb1*nb2){
-            tentative++;
-            question();
-        }
-
-        return tentative;
-
+        return tentative(nb1*nb2,new Scanner(System.in));
     }
+
 
     /*
      * Exercice 4.2
@@ -37,8 +36,15 @@ public class Exercice4 {
      * @param n
      * @return
      */
-    public int evaluation(int n){
+    public static int evalError(int n){
+        if(n==1){
+            return question() - 1;
+        }
+        return question()-1+evalError(n-1);
+    }
 
+    public static int evaluation(int n){
+        return 20-evalError(n);
     }
 
     public static void main(String[] args){

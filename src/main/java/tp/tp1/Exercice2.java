@@ -6,11 +6,11 @@ public class Exercice2 {
     /**
      * Exercice 2.1
      * Cette fonction permets d'afficher un tableau entier qui est passé en paramètre.
-     * @param tab un tableau entier que nous allons afficher ses éléments.
+     * @param t un tableau entier que nous allons afficher ses éléments.
      */
-    public static void affiche(int[] tab){
-        for(int i=0; i<tab.length; i++){ // Nous allons parcourir toutes les cases pour faire l'affichage.
-            System.out.println(tab[i]);
+    public static void affiche(int[] t){
+        for(int i=0; i<t.length; i++){ // Nous allons parcourir toutes les cases pour faire l'affichage.
+            System.out.println(t[i]);
         }
     }
 
@@ -57,21 +57,13 @@ public class Exercice2 {
      * @return un tableau t3 de taille max(n1, n2) obtenu en multipliant t1 et t2 case par case.
      */
     public static int[] multiplication(int[] tab1, int[] tab2){
-        if(tab1.length > tab2.length){ // Si le taille de tab1 est plus grande que tab2, comme dans la multiplication
-            // le chiffre 1 est neutre; nous allons ajouter le chiffre 1  à la fin du tableau tab2 jusqu'aux les deux
-            // tableaux ont la même taille
-            add1(tab2, tab1.length-tab2.length); // Pour pouvoir le faire, nous appelons le fonction add1 qui est
-            // déclaré dans la meme classe.
-        }else{ // Si le taille de tab2 est plus grande que tab1, comme dans la multiplication
-            // le chiffre 1 est neutre; nous allons ajouter le chiffre 1  à la fin du tableau tab1 jusqu'aux les deux
-            // tableaux ont la même taille
-            add1(tab1, tab2.length-tab1.length); // Pour pouvoir le faire, nous appelons le fonction add1 qui est
-            // déclaré dans la meme classe.
-        }
-
-        return arrayMultiplication(tab1,tab2); // Maintenant on a deux tableaux qui ont le même taille. Pour pouvoir
+     return arrayMultiplication(
+             add1(tab2, tab1.length-tab2.length),
+             add1(tab1, tab2.length-tab1.length)
+     );
+     // Maintenant on a deux tableaux qui ont le même taille. Pour pouvoir
         // faire la multiplication nous allons appeler la fonction arrayMultiplication qui fait la multiplication entre
-        // des tableaux d'entiers qui ont le même taille et nous allons retourner la réponse de cette fonction.
+        // des tableaux d'entiers qui ont le même taille.
     }
 
     /*

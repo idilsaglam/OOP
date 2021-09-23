@@ -5,7 +5,7 @@ public class Exercice1 {
 
   Exercice 1.1
 
-  - Le type d'entrée de la méthode main est 'args' qui signifie les arguments d'une ligne de commande.
+  - Le type d'entrée de la méthode main est une tableau de chaîne de caractère.
   - Le type de sortie de la méthode main est void.
   */
 
@@ -13,9 +13,7 @@ public class Exercice1 {
    Exercice 1.2
     */
    public static void main (String[] args) {
-       for (String s: args) {
-           System.out.println("aaaaaa"+s);
-       }
+       System.out.println(args.length);
    }
 
     /*
