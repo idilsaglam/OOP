@@ -11,6 +11,7 @@ public class Exercice1 {
 
    /*
    Exercice 1.2
+   Cette fonction affiche le nombre d'arguments données en entrée
     */
    public static void main (String[] args) {
        System.out.println(args.length);
@@ -18,7 +19,8 @@ public class Exercice1 {
 
     /*
      * Exercice 1.3
-     * .length();
+     * .length() est une méthode qui est dans la classe String et qui permets de calculer la taille d'une
+     * chaîne de caractères.
      */
 
     /*

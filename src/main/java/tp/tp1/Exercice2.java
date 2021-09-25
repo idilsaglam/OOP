@@ -76,20 +76,17 @@ public class Exercice2 {
      */
 
 
-    /**
-     * Exercice 2.4
-     * @param t
-     * @return le tableau obtenu en séparant des chiffres.
-     */
-    public int[] split(int[] t){
+    public static String concatenation(int[] t){
         String s = "";
 
         // Nous allons faire une concatenation pour chaque case du tableau t.
         for(int i=0; i<t.length; i++){
             s+=""+t[i];
         }
+        return s;
+    }
 
-        // Nous allons créer un tableau qui a une taille de la chaîne de caractère s.
+    public static int[] toArray(String s){
         int[] res = new int[s.length()];
 
         // Nous allons parcourir toutes les lettres de la chaîne de caractère s.
@@ -100,5 +97,15 @@ public class Exercice2 {
             // qui transforme le caractère qui est donné en paramètre en entier.
         }
         return res;
+    }
+    /**
+     * Exercice 2.4
+     * @param t
+     * @return le tableau obtenu en séparant des chiffres.
+     */
+    public int[] split(int[] t){
+
+        String s = concatenation(t);
+        return(toArray(s));
     }
 }
