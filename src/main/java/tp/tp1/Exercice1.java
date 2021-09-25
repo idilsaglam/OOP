@@ -9,17 +9,17 @@ public class Exercice1 {
   - Le type de sortie de la méthode main est void.
   */
 
-   /*
-   Exercice 1.2
-   Cette fonction affiche le nombre d'arguments données en entrée
-    */
-   public static void main (String[] args) {
-       System.out.println(args.length);
-   }
+    /*
+    Exercice 1.2
+    Ce programme affiche le nombre d'arguments données en entrée
+     */
+    public static void main(String[] args) {
+        System.out.println(args.length);
+    }
 
     /*
      * Exercice 1.3
-     * .length() est une méthode qui est dans la classe String et qui permets de calculer la taille d'une
+     * length est une méthode qui est dans la classe String et qui permets de calculer la taille d'une
      * chaîne de caractères.
      */
 

@@ -24,6 +24,9 @@ public class Informations {
     }
     public void setVivalite(int v){this.vivalite = v;}
     public void setAgilite(int a){this.agilite = a;}
-
-
+    @Override
+    public String toString() {
+        return String.format("Vitaite: %d Force: %d Agilité: %d", this.getVitalite(), this.getForce(), this.getAgilite());
+    }
 }
+

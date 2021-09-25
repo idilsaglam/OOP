@@ -61,9 +61,6 @@ public class Exercice2 {
              add1(tab2, tab1.length-tab2.length),
              add1(tab1, tab2.length-tab1.length)
      );
-     // Maintenant on a deux tableaux qui ont le même taille. Pour pouvoir
-        // faire la multiplication nous allons appeler la fonction arrayMultiplication qui fait la multiplication entre
-        // des tableaux d'entiers qui ont le même taille.
     }
 
     /*
@@ -76,36 +73,51 @@ public class Exercice2 {
      */
 
 
+    /**
+     * Une fonction qui crée une chaîne de caractères à partir d'un tableau des entiers
+     * @param t Le tableau des entiers
+     * @return Une chaîne de caractère qui est construite à partir du tableau t
+     */
     public static String concatenation(int[] t){
         String s = "";
 
         // Nous allons faire une concatenation pour chaque case du tableau t.
         for(int i=0; i<t.length; i++){
-            s+=""+t[i];
+            s += ""+t[i];
         }
         return s;
     }
 
+    /**
+     * Fonction qui transforme une chaîne de caractères qui contient des chiffres à un tableau des entiers.
+     * @param s Une chaîne de caractères qui contient que des chiffres
+     * @return Le tableau qui contient tous les caractères de 's' passé en paramètre
+     */
     public static int[] toArray(String s){
+        // La taille du tableau doit être égale au nom de caractères de s
         int[] res = new int[s.length()];
-
         // Nous allons parcourir toutes les lettres de la chaîne de caractère s.
         for(int j=0; j<s.length();j++){
             // Nous allons ajouter les caractères au tableau d'entier. Pour faire cela, il
             // faut que nous transformons les caractères en entier.
-            res[j] = Character.getNumericValue(s.charAt(j)); // Pour le faire, nous utilisons le fonction getNumericValue
+            res[j] = Character.getNumericValue(s.charAt(j));
+            // Pour le faire, nous utilisons le fonction getNumericValue
             // qui transforme le caractère qui est donné en paramètre en entier.
         }
         return res;
     }
     /**
      * Exercice 2.4
+     * la fonction split transforme un tableau qui contient des entier à un tableau qui contient
+     * que des chiffres
      * @param t
-     * @return le tableau obtenu en séparant des chiffres.
+     * @return le tableau obtenu en séparant des chiffres des éléments de tableau t.
      */
     public int[] split(int[] t){
-
-        String s = concatenation(t);
-        return(toArray(s));
+        return(
+                toArray(
+                        concatenation(t)
+                )
+        );
     }
 }
