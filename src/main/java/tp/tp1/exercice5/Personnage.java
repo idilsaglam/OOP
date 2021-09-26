@@ -39,7 +39,7 @@ public class Personnage {
 
     /**
      * Fonction qui permet d'attaquer au Personnage def
-     * @param def Le personnage défenseur à ataquer
+     * @param def Le personnage défenseur à attaquer
      */
     public void attaque(Personnage def){
         Random rd = new Random();
