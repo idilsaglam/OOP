@@ -11,8 +11,9 @@ public class Exercice2 {
     for (int i = 0;
         i < t.length;
         i++) { // Nous allons parcourir toutes les cases pour faire l'affichage.
-      System.out.println(t[i]);
+      System.out.print(t[i]+" ");
     }
+    System.out.println();
   }
 
   /**
@@ -124,7 +125,14 @@ public class Exercice2 {
    * @param t
    * @return le tableau obtenu en séparant des chiffres des éléments de tableau t.
    */
-  public int[] split(int[] t) {
+  public static int[] split(int[] t) {
     return (toArray(concatenation(t)));
+  }
+
+  public static void main(String[] args){
+    affiche(new int[]{1,4,5});
+    affiche(multiplication(new int[]{1,3,6,7},new int[]{2,4,6}));
+    affiche(split(new int[]{2,12,36,7}));
+
   }
 }
