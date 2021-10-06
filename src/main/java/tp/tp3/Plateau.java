@@ -34,6 +34,10 @@ public class Plateau {
     }
 
     public void afficher(){
-
+        for(int i=0; i<this.cases.length; i++){
+            for(int j=0; j<cases[i].length; j++){
+                System.out.println(cases[i][j].toString());
+            }
+        }
     }
 }
