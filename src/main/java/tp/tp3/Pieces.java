@@ -9,6 +9,10 @@ public class Pieces {
         this.nom = nom;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
     @Override
     public String toString(){
         char c = this.nom.charAt(0);
