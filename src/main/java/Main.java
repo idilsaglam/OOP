@@ -7,6 +7,7 @@ public class Main {
         //tp.tp1.Exercice3.main(new String[]{"Kaan", "Idil", "Idylle"});
         // tp.tp1.exercice5.Combat.main(args);
 
-        td.td2.Test.main(args);
+        //td.td2.Test.main(args);
+        tp.tp3.Echecs.main(args);
     }
 }
