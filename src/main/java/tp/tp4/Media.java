@@ -1,5 +1,6 @@
 package tp.tp4;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Media implements Comparable<Media> {
@@ -11,6 +12,7 @@ public class Media implements Comparable<Media> {
         this.titre = titre;
         this.id = Media.counter;
         Media.counter++;
+        baseDeDonnees = new LinkedList<>();
     }
     public void setTitre(String titre){
         this.titre = titre;
@@ -34,6 +36,10 @@ public class Media implements Comparable<Media> {
         return this.id<doc.getNumero();
     }
 
+    public boolean plusPetit(Livre doc){
+        return this.id<doc.getNumero();
+    }
+
     public void ajouter(Media doc){
         for(int i=0; i<baseDeDonnees.size();i++){
             if(doc.compareTo(this.baseDeDonnees.get(i))<0){
@@ -42,6 +48,10 @@ public class Media implements Comparable<Media> {
             }
         }
     }
+    @Override
+    public int compareTo(Media m){
+        return this.getNumero()-m.getNumero();
+    }
 
     /**
      * Une méthode qui imprime tous les dictionnaires
@@ -49,15 +59,27 @@ public class Media implements Comparable<Media> {
     public void tousLesDictionnaires(){
         for(int i=0; i<baseDeDonnees.size();i++){
             if(this.baseDeDonnees.get(i) instanceof Dictionnaire){
+                //TODO
                 System.out.println(this.baseDeDonnees.get(i).toString());
             }
         }
     }
 
-    @Override
-    public int compareTo(Media m){
-        return this.getNumero()-m.getNumero();
+    /**
+     * Une méthode qui qui retourne tous les médias pour lesquels p est vrai
+     * @param p
+     * @return true si tous les médias pour lesquels p est vrai sinon false
+     */
+    public ArrayList<Media> recherche(Predicat p){
+        ArrayList<Media> a = new ArrayList<>();
+        for(int i=0; i<baseDeDonnees.size(); i++){
+            if(p.estVrai(baseDeDonnees.get(i))){
+                a.add(baseDeDonnees.get(i));
+            }
+        }
+        return a;
     }
+
 
     public static void main(String[] args){
         Media m = new Media("media");
@@ -68,5 +90,10 @@ public class Media implements Comparable<Media> {
         System.out.println(f.toString());
         Dictionnaire d = new Dictionnaire("Japonais",300,"dict");
         System.out.println(d.toString());
+        m.ajouter(l);
+        m.ajouter(f);
+        m.ajouter(d);
+        m.tousLesDictionnaires();
+
     }
 }

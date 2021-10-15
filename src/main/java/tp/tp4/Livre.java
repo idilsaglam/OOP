@@ -34,6 +34,12 @@ public class Livre extends Media{
         this.nbPages = nbPages;
     }
 
+    public boolean plusPetit(Media doc){
+        if(doc instanceof Livre){
+            return super.plusPetit(doc);
+        }
+        return true;
+    }
     @Override
     public String toString(){
         return "Livre : "+ super.toString();
