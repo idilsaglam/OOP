@@ -8,6 +8,7 @@ public class Main {
         // tp.tp1.exercice5.Combat.main(args);
 
         //td.td2.Test.main(args);
-        tp.tp3.Echecs.main(args);
+        //tp.tp3.Echecs.main(args);
+        tp.tp4.Media.main(args);
     }
 }

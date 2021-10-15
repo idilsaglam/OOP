@@ -34,4 +34,8 @@ public class Livre extends Media{
         this.nbPages = nbPages;
     }
 
+    @Override
+    public String toString(){
+        return "Livre : "+ super.toString();
+    }
 }

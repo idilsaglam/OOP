@@ -36,5 +36,10 @@ public class Film extends Media{
         this.langue = langue;
     }
 
+    @Override
+    public String toString(){
+        return "Film : "+ super.toString();
+    }
+
 
 }
