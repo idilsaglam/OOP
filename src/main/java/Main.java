@@ -9,6 +9,6 @@ public class Main {
 
         //td.td2.Test.main(args);
         //tp.tp3.Echecs.main(args);
-        tp.tp4.Media.main(args);
+        tp.tp4.Mediatheque.main(args);
     }
 }
