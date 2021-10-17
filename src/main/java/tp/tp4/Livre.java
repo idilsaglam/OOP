@@ -1,47 +1,56 @@
 package tp.tp4;
 
 public class Livre extends Media{
-    private String nomAuteur;
-    private String langue;
-    private int nbPages;
-    public Livre(String nom, String nomAuteur,String langue, int nbPages){
+    private final String nomAuteur;
+    private final int nbPages;
+
+    /**
+     * Fonction crée une nouvelle instance de la classe Livre
+     * @param nom Le nom de livre
+     * @param nomAuteur Le nom d'auteur du livre
+     * @param nbPages Le nombre de pages de livre
+     */
+    public Livre(String nom, String nomAuteur, int nbPages){
         super(nom);
        this.nomAuteur = nomAuteur;
-       this.langue = langue;
        this.nbPages = nbPages;
     }
+
+    /**
+     * Fonction retourne le nom d'auteur du livre
+     * @return Le nom d'auteur du livre
+     */
     public String getNomAuteur() {
-        return nomAuteur;
+        return this.nomAuteur;
     }
 
-    public void setNomAuteur(String nomAuteur) {
-        this.nomAuteur = nomAuteur;
-    }
-
-    public String getLangue() {
-        return langue;
-    }
-
-    public void setLangue(String langue) {
-        this.langue = langue;
-    }
-
+    /**
+     * Fonction retourne le nombre de pages du livre
+     * @return Le nombre de pages du livre
+     */
     public int getNbPages() {
-        return nbPages;
+        return this.nbPages;
     }
 
-    public void setNbPages(int nbPages) {
-        this.nbPages = nbPages;
-    }
 
+/*
+    Avec la présence de ordreMedia nous avons plus besoin de cette fonction
+    @Override
     public boolean plusPetit(Media doc){
         if(doc instanceof Livre){
             return super.plusPetit(doc);
         }
         return true;
     }
+    */
+
+    @Override
+    public int ordreMedia() {
+        return 100;
+    }
+
     @Override
     public String toString(){
-        return "Livre : "+ super.toString();
+        return String.format("Livre: auteur: %s, nombre de pages %d, %s", this.nomAuteur, this.nbPages, super.toString());
     }
 }
