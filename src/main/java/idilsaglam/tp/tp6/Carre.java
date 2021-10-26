@@ -15,4 +15,14 @@ public class Carre extends Figure{
     public void affiche() {
 
     }
+
+    @Override
+    public double estDistantDe(Figure fig) {
+        return 0;
+    }
+
+    @Override
+    public double surface() {
+        return 0;
+    }
 }

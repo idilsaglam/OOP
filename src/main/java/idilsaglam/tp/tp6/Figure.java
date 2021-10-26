@@ -17,4 +17,10 @@ public abstract class Figure {
         return this.posY;
     }
     public abstract void affiche();
+    public abstract double estDistantDe(Figure fig);
+    public abstract double surface();
+    public void deplacement(int x, int y){
+        this.posX = x;
+        this.posY = y;
+    }
 }
