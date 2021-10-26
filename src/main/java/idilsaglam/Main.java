@@ -12,6 +12,7 @@ public class Main {
 
     // idilsaglam.td.td2.Test.main(args);
     // idilsaglam.tp.tp3.Echecs.main(args);
-    idilsaglam.tp.tp4.Mediatheque.main(args);
+    // idilsaglam.tp.tp4.Mediatheque.main(args);
+    idilsaglam.tp.tp5.Test.main(args);
   }
 }
