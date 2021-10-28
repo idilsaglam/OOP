@@ -23,6 +23,6 @@ public class Carre extends Figure{
 
     @Override
     public double surface() {
-        return 0;
+        return cote*cote;
     }
 }

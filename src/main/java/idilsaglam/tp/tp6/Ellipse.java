@@ -28,6 +28,6 @@ public class Ellipse extends Figure{
 
     @Override
     public double surface() {
-        return 0;
+        return Math.PI * grand_rayon *petit_rayon;
     }
 }

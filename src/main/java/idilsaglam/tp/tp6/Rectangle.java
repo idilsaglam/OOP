@@ -30,6 +30,6 @@ public class Rectangle extends Figure {
 
     @Override
     public double surface() {
-        return 0;
+        return largeur*hauteur;
     }
 }

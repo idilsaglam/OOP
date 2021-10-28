@@ -23,6 +23,6 @@ public class Circle extends Figure {
 
     @Override
     public double surface() {
-        return 0;
+        return 2*Math.PI*rayon*rayon;
     }
 }

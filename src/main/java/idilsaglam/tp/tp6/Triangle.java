@@ -30,6 +30,6 @@ public class Triangle extends Figure {
 
     @Override
     public double surface() {
-        return 0;
+        return (base*hauteur)/2;
     }
 }

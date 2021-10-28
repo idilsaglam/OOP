@@ -1,5 +1,5 @@
 package idilsaglam.tp.tp6;
 
-public interface Deformable {
+public interface Deformable{
 Figure deformation(double coeffH, double coeffV);
 }
