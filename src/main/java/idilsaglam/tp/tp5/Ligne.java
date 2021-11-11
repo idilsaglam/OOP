@@ -2,13 +2,9 @@
 package idilsaglam.tp.tp5;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Ligne extends ChaineCar {
   LinkedList<ChaineCar> content;
@@ -77,15 +73,15 @@ public class Ligne extends ChaineCar {
 
   public void justifier(int n) {
     List<Integer> indexes = new ArrayList<>();
-    for (int i = 0; i<this.content.size(); i++) {
+    for (int i = 0; i < this.content.size(); i++) {
       if (this.content.get(i) instanceof Espace) {
         indexes.add(i);
       }
     }
     int j = 0;
-    for (int i = 0; i<n; i++) {
-      ((Espace)this.content.get(indexes.get(j))).etaler();
-      j = (j+1) % indexes.size();
+    for (int i = 0; i < n; i++) {
+      ((Espace) this.content.get(indexes.get(j))).etaler();
+      j = (j + 1) % indexes.size();
     }
   }
 }

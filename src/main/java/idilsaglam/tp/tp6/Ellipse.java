@@ -1,33 +1,66 @@
+/* (C)2021 */
 package idilsaglam.tp.tp6;
 
-public class Ellipse extends Figure{
-    private final double grand_rayon;
-    private final double petit_rayon;
+public class Ellipse extends Figure implements Deformable {
+  private final double grandRayon;
+  private final double petitRayon;
 
-    public Ellipse(double grand_rayon, double petit_rayon, int posX,int posY){
-        super(posX,posY);
-        this.grand_rayon = grand_rayon;
-        this.petit_rayon = petit_rayon;
-    }
+  /**
+   * Crée une nouvelle objet Ellipse
+   *
+   * @param grandRayon Le grand rayon d'ellipse
+   * @param petitRayon le petit rayon d'ellipse
+   * @param posX L'abscisse du centre d'ellipse
+   * @param posY L'ordonnées du centre d'ellipse
+   */
+  public Ellipse(double grandRayon, double petitRayon, int posX, int posY) {
+    super(posX, posY);
+    this.grandRayon = grandRayon;
+    this.petitRayon = petitRayon;
+  }
 
-    public double getGrand_rayon(){ return this.grand_rayon;}
+  /**
+   * Retourne le grand rayon d'ellipse
+   *
+   * @return Le grand rayon d'ellipse
+   */
+  public double getGrandRayon() {
+    return this.grandRayon;
+  }
 
-    public double getPetit_rayon() {
-        return petit_rayon;
-    }
+  /**
+   * Retourne le petit rayon d'ellipse
+   *
+   * @return Le petit rayon d'ellipse
+   */
+  public double getPetitRayon() {
+    return petitRayon;
+  }
 
-    @Override
-    public void affiche() {
+  @Override
+  public void affiche() {
+    System.out.println(this.toString());
+  }
 
-    }
+  @Override
+  public String toString() {
+    return String.format(
+        "%s, centre (%d,%d), Grand rayon: %f Petit rayon: %f",
+        this.getClass().getSimpleName(),
+        super.getPosX(),
+        super.getPosY(),
+        this.getGrandRayon(),
+        this.getPetitRayon());
+  }
 
-    @Override
-    public double estDistantDe(Figure fig) {
-        return 0;
-    }
+  @Override
+  public double surface() {
+    return Math.PI * grandRayon * petitRayon;
+  }
 
-    @Override
-    public double surface() {
-        return Math.PI * grand_rayon *petit_rayon;
-    }
+  @Override
+  public Figure deformation(double coeffH, double coeffV) {
+    return new Ellipse(
+        this.grandRayon * coeffH, this.petitRayon * coeffV, this.getPosX(), this.getPosY());
+  }
 }
