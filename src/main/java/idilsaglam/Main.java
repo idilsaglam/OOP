@@ -14,6 +14,7 @@ public class Main {
     // idilsaglam.tp.tp3.Echecs.main(args);
     // idilsaglam.tp.tp4.Mediatheque.main(args);
     // idilsaglam.tp.tp5.Test.main(args);
-    idilsaglam.tp.tp8.Arbre.main(args);
+    // idilsaglam.tp.tp8.Arbre.main(args);
+    idilsaglam.tp.tp9.Palette.main(args);
   }
 }
