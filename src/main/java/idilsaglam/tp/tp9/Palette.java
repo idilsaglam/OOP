@@ -1,6 +1,8 @@
 /* (C)2021 */
 package idilsaglam.tp.tp9;
 
+import idilsaglam.tp.tp9.view.Vue;
+
 public class Palette {
   private Vue view;
 
