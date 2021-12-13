@@ -15,6 +15,8 @@ public class Main {
     // idilsaglam.tp.tp4.Mediatheque.main(args);
     // idilsaglam.tp.tp5.Test.main(args);
     // idilsaglam.tp.tp8.Arbre.main(args);
-    idilsaglam.tp.tp9.Palette.main(args);
+    // idilsaglam.tp.tp9.Palette.main(args);
+    // idilsaglam.ea.td.td10.EATD10SAGLAMIdil.main(args);
+    idilsaglam.tp.tp11.Test.main(args);
   }
 }
